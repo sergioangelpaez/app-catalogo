@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+# Catálogo de Productos - Prueba Técnica Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Aplicación web de una sola página (SPA) desarrollada con React y TypeScript que permite visualizar un catálogo de productos. Incluye funcionalidades de búsqueda, filtrado por categoría, vista detallada de productos y carrito de compras.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## React Compiler
+- **Vista de Catálogo:** Lista de productos paginada, filtrado por categoría, rango de precios y búsqueda por nombre.
+- **Vista de Detalle:** Información detallada de cada producto cen ruta dinámica `/products/:id`.
+- **Carrito de Compras:** Visualización, edición y eliminación de productos seleccionados.
+- **Optimización:** Paginación, manejo de estados de carga y error, renders optimizados con `useCallback` y `useMemo`.
+- **Gestión de Estado:** Centralizada con `zustand`.
+- **Ruteo:** Implementado con `React Router 7`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- React Router 7
+- Zustand
+- Tailwind
+- Fake Store API como fuente de datos (https://fakestoreapi.com/docs)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Uso
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clonar el repositorio: `git clone https://github.com/sergioangelpaez/app-catalogo`
+2. Instalar dependencias: `npm install`
+3. Ejecutar el servidor de desarrollo: `npm run dev`
